@@ -6,8 +6,8 @@ MixtapeAcademy::Application.routes.draw do
   
   get '/login' => 'users#login', :as => :users_login
   
+  get "pages/social"=> 'pages#social'
   
-
   def index
     
   end
