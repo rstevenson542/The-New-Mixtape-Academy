@@ -1,5 +1,7 @@
 MixtapeAcademy::Application.routes.draw do
   
+  resources :mixtapes
+
   resources :users
   
   root :to => 'users#startup'

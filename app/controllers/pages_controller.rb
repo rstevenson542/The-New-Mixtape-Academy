@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   
       respond_to do |format|
         format.html #index.html.erb
-        format.json {  render json: @video  }
+        #format.json {  render json: @video  }
     end
   end
 end
