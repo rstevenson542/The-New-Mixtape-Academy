@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :location, :sex, :age, :genre
   
-  
+  has_many :mixtapes
   
   # email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   # validates :name, :presence => true,

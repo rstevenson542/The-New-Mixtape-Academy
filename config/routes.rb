@@ -1,5 +1,9 @@
 MixtapeAcademy::Application.routes.draw do
   
+  get "/tracks/new/:id/" => "tracks#new"
+  
+  resources :tracks
+
   resources :mixtapes
 
   resources :users

@@ -14,6 +14,8 @@ class MixtapesController < ApplicationController
   # GET /mixtapes/1.json
   def show
     @mixtape = Mixtape.find(params[:id])
+    
+    
 
     respond_to do |format|
       format.html # show.html.erb
@@ -44,7 +46,7 @@ class MixtapesController < ApplicationController
 
     respond_to do |format|
       if @mixtape.save
-        format.html { redirect_to @mixtape, notice: 'Mixtape was successfully created.' }
+        format.html { redirect_to "/tracks/new/#{@mixtape.id}", notice: 'Mixtape was successfully created.' }
         format.json { render json: @mixtape, status: :created, location: @mixtape }
       else
         format.html { render action: "new" }

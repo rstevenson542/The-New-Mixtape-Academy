@@ -15,6 +15,17 @@
   <%= @mixtape.user_id %>
 </p>
 
+<p>
+  <b>Tracks:</b>
+<% @mixtape.tracks.each do |t| %>
+  <% client = YouTubeIt::Client.new(:dev_key => "AI39si4FXt66V53wpfzarL8L9Zfv-HJAtRg2cms-YoCf8RAdmnNENqZbZHO8DlbvSa3cmvV7n5oKNNDWOZLpZF6fyfxbUa25Aw") %>
+  <% @videos = client.videos_by(:query => t.title).videos %>
+  <% video = @videos[0] %>
+  <%= link_to image_tag(video.thumbnails.first.url), video.player_url %><BR><%= video.title %>
+  <!-- <%= t.title %><br> -->
+<% end %>
+</p>
+
 
 <%= link_to 'Edit', edit_mixtape_path(@mixtape) %> |
 <%= link_to 'Back', mixtapes_path %>
