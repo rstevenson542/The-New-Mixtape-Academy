@@ -6,7 +6,7 @@ class MixtapesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render :json => @mixtapes }
+      format.json { render json: @mixtapes }
     end
   end
 
@@ -17,7 +17,7 @@ class MixtapesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render :json => @mixtape }
+      format.json { render json: @mixtape }
     end
   end
 
@@ -28,7 +28,7 @@ class MixtapesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render :json => @mixtape }
+      format.json { render json: @mixtape }
     end
   end
 
@@ -44,11 +44,11 @@ class MixtapesController < ApplicationController
 
     respond_to do |format|
       if @mixtape.save
-        format.html { redirect_to @mixtape, :notice => 'Mixtape was successfully created.' }
-        format.json { render :json => @mixtape, :status => :created, :location => @mixtape }
+        format.html { redirect_to @mixtape, notice: 'Mixtape was successfully created.' }
+        format.json { render json: @mixtape, status: :created, location: @mixtape }
       else
-        format.html { render :action => "new" }
-        format.json { render :json => @mixtape.errors, :status => :unprocessable_entity }
+        format.html { render action: "new" }
+        format.json { render json: @mixtape.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -60,11 +60,11 @@ class MixtapesController < ApplicationController
 
     respond_to do |format|
       if @mixtape.update_attributes(params[:mixtape])
-        format.html { redirect_to @mixtape, :notice => 'Mixtape was successfully updated.' }
+        format.html { redirect_to @mixtape, notice: 'Mixtape was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render :action => "edit" }
-        format.json { render :json => @mixtape.errors, :status => :unprocessable_entity }
+        format.html { render action: "edit" }
+        format.json { render json: @mixtape.errors, status: :unprocessable_entity }
       end
     end
   end

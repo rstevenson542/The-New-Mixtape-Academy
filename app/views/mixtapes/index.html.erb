@@ -2,6 +2,9 @@
 
 <table>
   <tr>
+    <th>Name</th>
+    <th>Genre</th>
+    <th>User</th>
     <th></th>
     <th></th>
     <th></th>
@@ -9,9 +12,12 @@
 
 <% @mixtapes.each do |mixtape| %>
   <tr>
+    <td><%= mixtape.name %></td>
+    <td><%= mixtape.genre %></td>
+    <td><%= mixtape.user_id %></td>
     <td><%= link_to 'Show', mixtape %></td>
     <td><%= link_to 'Edit', edit_mixtape_path(mixtape) %></td>
-    <td><%= link_to 'Destroy', mixtape, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Destroy', mixtape, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>

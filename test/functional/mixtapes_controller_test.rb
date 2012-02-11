@@ -18,30 +18,30 @@ class MixtapesControllerTest < ActionController::TestCase
 
   test "should create mixtape" do
     assert_difference('Mixtape.count') do
-      post :create, :mixtape => @mixtape.attributes
+      post :create, mixtape: @mixtape.attributes
     end
 
     assert_redirected_to mixtape_path(assigns(:mixtape))
   end
 
   test "should show mixtape" do
-    get :show, :id => @mixtape
+    get :show, id: @mixtape
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => @mixtape
+    get :edit, id: @mixtape
     assert_response :success
   end
 
   test "should update mixtape" do
-    put :update, :id => @mixtape, :mixtape => @mixtape.attributes
+    put :update, id: @mixtape, mixtape: @mixtape.attributes
     assert_redirected_to mixtape_path(assigns(:mixtape))
   end
 
   test "should destroy mixtape" do
     assert_difference('Mixtape.count', -1) do
-      delete :destroy, :id => @mixtape
+      delete :destroy, id: @mixtape
     end
 
     assert_redirected_to mixtapes_path

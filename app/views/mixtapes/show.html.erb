@@ -1,5 +1,20 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <b>Name:</b>
+  <%= @mixtape.name %>
+</p>
+
+<p>
+  <b>Genre:</b>
+  <%= @mixtape.genre %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @mixtape.user_id %>
+</p>
+
 
 <%= link_to 'Edit', edit_mixtape_path(@mixtape) %> |
 <%= link_to 'Back', mixtapes_path %>
